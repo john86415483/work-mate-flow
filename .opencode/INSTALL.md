@@ -10,12 +10,12 @@
 
 询问用户希望安装到全局还是当前项目：
 
-- **全局安装**（默认）：添加到 `~/.config/opencode/opencode.json`
-- **项目安装**：添加到当前项目的 `opencode.json`
+- **全局安装**（默认）：添加到 `~/.config/opencode/opencode.json`（或 `opencode.jsonc`）
+- **项目安装**：添加到当前项目的 `opencode.json`（或 `opencode.jsonc`）
 
 ### 2. 配置插件
 
-在对应 `opencode.json` 的 `plugin` 数组中添加：
+在对应 `opencode.json` 或 `opencode.jsonc` 的 `plugin` 数组中添加：
 
 ```json
 {
