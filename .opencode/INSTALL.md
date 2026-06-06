@@ -6,7 +6,16 @@
 
 ## 安装
 
-将 work-mate-flow 添加到 `opencode.json`（全局或项目级别）的 `plugin` 数组中：
+### 1. 确认安装范围
+
+询问用户希望安装到全局还是当前项目：
+
+- **全局安装**（默认）：添加到 `~/.config/opencode/opencode.json`
+- **项目安装**：添加到当前项目的 `opencode.json`
+
+### 2. 配置插件
+
+在对应 `opencode.json` 的 `plugin` 数组中添加：
 
 ```json
 {
@@ -14,9 +23,13 @@
 }
 ```
 
-重启 OpenCode。插件通过 OpenCode 的插件管理器安装，并注册所有 skill。
+### 3. 重启 OpenCode
 
-验证安装：询问"你有什么技能？"
+插件通过 OpenCode 的插件管理器自动安装，并注册所有 skill。
+
+### 4. 验证安装
+
+询问"你有什么技能？"确认 skill 已加载。
 
 ## 使用
 
