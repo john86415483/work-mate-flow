@@ -1,0 +1,14 @@
+{
+  "files": [
+    { "path": "package.json", "field": "version" },
+    { "path": ".claude-plugin/plugin.json", "field": "version" }
+  ],
+  "audit": {
+    "exclude": [
+      "node_modules",
+      ".git",
+      ".version-bump.json",
+      "scripts/bump-version.sh"
+    ]
+  }
+}

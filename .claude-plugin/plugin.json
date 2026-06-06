@@ -1,0 +1,16 @@
+{
+  "name": "work-mate-flow",
+  "description": "AI coding agent skills and workflows for work-mate-flow",
+  "version": "0.0.1",
+  "author": {
+    "name": "John"
+  },
+  "homepage": "https://github.com/john/work-mate-flow",
+  "repository": "https://github.com/john/work-mate-flow",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflows",
+    "work-mate-flow"
+  ]
+}
