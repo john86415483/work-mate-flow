@@ -6,15 +6,15 @@
 
 ## 安装
 
-将 work-mate-flow 添加到你的 `opencode.json`（全局或项目级别）的 `plugin` 数组中：
+将 work-mate-flow 添加到 `opencode.json`（全局或项目级别）的 `plugin` 数组中：
 
 ```json
 {
-  "plugin": ["work-mate-flow@git+https://github.com/john/work-mate-flow.git"]
+  "plugin": ["work-mate-flow@git+https://github.com/john86415483/work-mate-flow.git"]
 }
 ```
 
-重启 OpenCode。
+重启 OpenCode。插件通过 OpenCode 的插件管理器安装，并注册所有 skill。
 
 验证安装：询问"你有什么技能？"
 
@@ -29,8 +29,33 @@ skill tool to load <skill-name>
 
 ## 更新
 
+OpenCode 通过 git 包规范安装 work-mate-flow。某些 OpenCode 和 Bun 版本会锁定已解析的 git 依赖，重启可能不会自动获取最新提交。如更新未生效，清除 OpenCode 的包缓存或重新安装插件。
+
+固定特定版本：
+
 ```json
 {
-  "plugin": ["work-mate-flow@git+https://github.com/john/work-mate-flow.git#v1.0.0"]
+  "plugin": ["work-mate-flow@git+https://github.com/john86415483/work-mate-flow.git#v1.0.0"]
 }
 ```
+
+## 故障排查
+
+### 插件未加载
+
+1. 检查日志：`opencode run --print-logs "hello" 2>&1 | grep -i work-mate-flow`
+2. 验证 `opencode.json` 中的 plugin 配置
+3. 确保使用最新版本的 OpenCode
+
+### Skill 未找到
+
+1. 使用 `skill` 工具列出已发现的 skill
+2. 检查插件是否正常加载（见上方）
+
+### 工具映射
+
+当 skill 引用 Claude Code 工具时，使用 OpenCode 对应工具：
+- `TodoWrite` → `todowrite`
+- `Task` + 子代理 → `@mention` 语法
+- `Skill` 工具 → OpenCode 原生 `skill` 工具
+- 文件操作 → 原生工具

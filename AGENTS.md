@@ -52,6 +52,8 @@ bash scripts/bump-version.sh --audit
 - 如果用户同意，先执行 `bash scripts/bump-version.sh <新版本号>`，再提交
 - 如果用户不同意，直接提交不升版本
 
+用户说"提交"时，执行升级版本号 + commit + push 到远端。
+
 ```bash
 # 示例：当前 0.0.1，升级到 0.0.2
 bash scripts/bump-version.sh 0.0.2

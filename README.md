@@ -1,12 +1,12 @@
 # work-mate-flow
 
-AI coding agent skills and workflows for Claude Code and OpenCode.
+AI 编码 Agent 的 Skills 和工作流插件，支持 Claude Code 和 OpenCode。
 
-## Installation
+## 安装
 
 ### Claude Code
 
-Add as a plugin:
+作为插件安装：
 
 ```bash
 /plugin install work-mate-flow@git+https://github.com/john/work-mate-flow.git
@@ -14,27 +14,25 @@ Add as a plugin:
 
 ### OpenCode
 
-Add to `opencode.json`:
+让 OpenCode 读取安装指引并自动完成安装：
 
-```json
-{
-  "plugin": ["work-mate-flow@git+https://github.com/john/work-mate-flow.git"]
-}
+```
+Fetch and follow instructions from https://raw.githubusercontent.com/john86415483/work-mate-flow/refs/heads/main/.opencode/INSTALL.md
 ```
 
-## Adding Skills
+## 添加 Skill
 
-Each skill is a directory under `skills/` containing a `SKILL.md` file with YAML frontmatter:
+每个 skill 是一个放在 `skills/` 下的目录，内含带 YAML frontmatter 的 `SKILL.md` 文件：
 
 ```markdown
 ---
 name: my-skill
-description: Use when [condition] - [what it does]
+description: Use when [条件] - [作用]
 ---
 
 # My Skill
 
-[Content here]
+[内容]
 ```
 
-The agent loads skills automatically via the `using-workmateflow` bootstrap mechanism.
+Agent 通过 `using-workmateflow` 引导机制自动加载 skill。
